@@ -1,0 +1,6 @@
+POST http://localhost:5000/api/v1/send-otp HTTP/1.1
+Content-Type: application/json
+
+{
+  "phone": '987654321'
+}

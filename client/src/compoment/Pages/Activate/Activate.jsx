@@ -1,24 +1,24 @@
 import React,{ useState} from 'react'
-import PhoneEmail from '../Steps/StepPhoneEmail/PhoneEmail';
-import Otp from '../Steps/StepOtp/Otp';
+import Name from '../Steps/StepName/Name';
+import Avatar from '../Steps/StepAvatar/Avatar';
 
 
 const steps ={
-    1: PhoneEmail,
-    2: Otp
+    1: Name,
+    2: Avatar
 }
 
-const Login = () => {
+const Activate = () => {
     const [ step, setStep ] = useState(1);
     const Step = steps[step];
     const nextHandler = ()=>{
         setStep(step+1);
     }
     return (
-        <div>
+        <div className="cardWrapper">
             <Step nextHandler={nextHandler} />
         </div>
     )
 }
 
-export default Login
+export default Activate

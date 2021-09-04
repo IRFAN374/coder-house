@@ -8,7 +8,7 @@ const Home = () => {
     const history = useHistory();
     const buttonHandler = ()=>{
        // console.log('Button Clicked')
-       history.push('/register')
+       history.push('/authenticate')
     }
     return (
         <div className={styles.cardContainer}>
@@ -19,16 +19,13 @@ const Home = () => {
                     gradually to make sure nothing breaks 
                 </p>
                 <div>
-                    <Button buttonHandler={buttonHandler} text='Get Your username' />
+                    <Button buttonHandler={buttonHandler} text="Let's Go" />
                 </div>
                 <div className={styles.signIn}>
                     <span>Have an invite text?</span>
-                    <Link className={styles.link} to='/login'>Sign In</Link>
+                    {/* <Link className={styles.link} to='/login'>Sign In</Link> */}
                 </div>
             </Card>
-          
-                
-           
         </div>
     )
 }
