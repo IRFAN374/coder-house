@@ -15,9 +15,15 @@ const Otp = ({nextHandler}) => {
     const dispatch = useDispatch();
 
     const clickHandler = async()=>{
-       const {data} = await verifyOtp({otp, phone, hash})
-       console.log("otp verification",data);
-       dispatch(setAuth(data));
+        if(!otp || !phone || !hash) return;
+        try {
+            const {data} = await verifyOtp({otp, phone, hash})
+            console.log("otp verification",data);
+            dispatch(setAuth(data));
+        } catch (error) {
+            console.log(error)
+        }
+      
        // nextHandler();
     }
 

@@ -13,6 +13,7 @@ const Phone = ({nextHandler}) => {
     const dispatch = useDispatch();
 
     const clickHandler = async ()=>{
+        if(!phoneNumber) return;
         const {data} = await sendOtp({'phone': phoneNumber});
         console.log("resposne is: ", data);
         dispatch(setOtp({

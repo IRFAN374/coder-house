@@ -15,9 +15,16 @@ import Activate from './compoment/Pages/Activate/Activate';
 import Rooms from './compoment/Pages/Rooms/Rooms';
 
 import { useSelector } from 'react-redux';
+import { useLoadingWithRefresh } from './hooks/useLoadingWithRefresh';
+import Loader from './compoment/Common/Loader/Loader';
+
 
 function App() {
+  
+  
+  const {loading} = useLoadingWithRefresh();
   return (
+    loading ? (<Loader message="Loading, Please wait" />):(
     <BrowserRouter>
       <Navigation/>
        <Switch>
@@ -38,7 +45,7 @@ function App() {
          </ProtectedRoute>
 
        </Switch>
-    </BrowserRouter>
+    </BrowserRouter>)
   );
 }
 
